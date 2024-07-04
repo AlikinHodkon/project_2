@@ -39,7 +39,6 @@ function App() {
     ]
     return shuffle(allColors);
   }, [])
-  console.log(colors);
   const tiles = [
     {id:1, clrId:"tile1", color:colors[0]},
     {id:2, clrId:"tile2", color:colors[1]},
@@ -59,19 +58,27 @@ function App() {
     {id:16, clrId:"tile16", color:colors[15]}
   ]
   function clickPanel(event){
-    if (clrId != null){
-      if (clrId[4] == event.target.classList[4]) return;
+    if (event.target.classList.contains('blocked')) return;
+    if (clrId != null){     
+      if (clrId[4] == event.target.classList[4]) {
+        setColorId(null);
+        setOpenPanels(0);
+        event.target.classList.remove('tileOpen');
+        event.target.classList.add('tileClosed');
+        return;
+      }
     }
     if (openPanels >= 1){
       if (event.target.classList[3] == clrId[3]){
+        clrId.add('blocked');
+        event.target.classList.add('blocked');
         setOpenPanels(0);
       }else{
-        setOpenPanels(0);
-        clrId.remove('tileOpen');
-        clrId.add('tileClosed');
+        setOpenPanels(1);
+        // clrId.remove('tileOpen');
+        // clrId.add('tileClosed');
         event.target.classList.remove('tileOpen');
         event.target.classList.add('tileClosed');
-        setColorId(null);
       }
       return;
     }
