@@ -1,0 +1,39 @@
+.tileOpen{
+    animation: tileRotate 1.5s;
+}
+
+button:disabled{
+    background-color: currentColor;
+}
+
+.tileClosed{
+    animation: tileRotateBack 1.5s;
+    animation-fill-mode: forwards
+}
+
+@keyframes tileRotate {
+    from{
+        background-color: gray;
+        transform: rotateY(0deg);
+    }
+    75%{
+        background-color: gray;
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes tileRotateBack {
+    from{
+        background-color: gray;
+        transform: rotateY(0deg);
+    }
+    25%{
+        background-color: gray;
+    }
+    to{
+        transform: rotateY(180deg);
+        background-color: gray;
+    }
+}
