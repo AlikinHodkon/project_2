@@ -75,10 +75,12 @@ function App() {
         setOpenPanels(0);
       }else{
         setOpenPanels(1);
-        // clrId.remove('tileOpen');
-        // clrId.add('tileClosed');
-        event.target.classList.remove('tileOpen');
-        event.target.classList.add('tileClosed');
+        setTimeout(() => { 
+          event.target.classList.remove('tileOpen');
+          event.target.classList.add('tileClosed');
+          clrId.remove('tileOpen');
+          clrId.add('tileClosed');
+        }, 2000)
       }
       return;
     }
