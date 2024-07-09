@@ -1,8 +1,10 @@
-# React + Vite
+# Choose a pair
+https://alikinhodkon.github.io/project_2/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Страница состоит из доски с плитками (4x4).
+- каждые 2 плитки имеют одинаковый цвет;
+- каждая плитка закрыта, поэтому пользователь не может видеть цвет.
 
-Currently, two official plugins are available:
+Игровой процесс представляет собой последовательность движений по открытию плиток.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Пользователь должен выбрать 2 плитки одинакового цвета, чтобы они открылись. Если он выбирает 2 плитки разного цвета, то они переходят в состояние "закрыто". Игра считается законченной, когда все плитки открыты.
