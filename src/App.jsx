@@ -105,7 +105,7 @@ function App() {
   }
   return (
     <div className='flex flex-col'>
-      <h1 className='text-center font-sans font-semibold text-[64px]'>Choose a pare</h1>
+      <h1 className='text-center font-sans font-semibold text-[64px]'>Choose a pair</h1>
       <div className='flex justify-between ml-[6vw] mr-[6vw]'>  
         <h3 className='font-sans font-semibold text-[32px]'>Amount of moves: {moves}</h3>
         <h3 className='text-cente text-[32px] font-semibold'>{gameOver}</h3>
