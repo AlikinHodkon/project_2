@@ -11,6 +11,31 @@ button:disabled{
     animation-fill-mode: forwards
 }
 
+.bg{
+    padding: 1em;
+    border: 16px solid transparent;
+    border-image: 16 repeating-linear-gradient(-45deg,
+    red 0, red 1em,
+    transparent 0, transparent 2em,
+    #58a 0, #58a 3em,
+    transparent 0, transparent 4em);
+}
+
+.bg_2{
+    background: #eee;
+    background-image: 
+    linear-gradient(45deg, #bbb 25%, transparent 0),
+    linear-gradient(45deg, transparent 75%, #bbb 0),
+    linear-gradient(45deg, #bbb 25%, transparent 0),
+    linear-gradient(45deg, transparent 25%, #bbb 0);
+    background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+    background-size: 30px 30px;
+}
+
+.bg_3{
+    background: repeating-linear-gradient(45deg, red, #58a 30px)
+}
+
 @keyframes tileRotate {
     from{
         background-color: gray;

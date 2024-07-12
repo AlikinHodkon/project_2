@@ -7,6 +7,7 @@ function App() {
   const [moves, setMoves] = useState(0);
   const [restart, setRestart] = useState(false);
   const [gameOver, setGameOver] = useState("");
+  const [round, setRound] = useState(1);
 
   const shuffle = (array) => {
     let currentIndex = array.length;
@@ -104,12 +105,13 @@ function App() {
     setOpenPanels(openPanels+1);
   }
   return (
-    <div className='flex flex-col'>
-      <h1 className='text-center font-sans font-semibold text-[64px]'>Choose a pair</h1>
-      <div className='flex justify-between ml-[6vw] mr-[6vw]'>  
-        <h3 className='font-sans font-semibold text-[32px]'>Amount of moves: {moves}</h3>
-        <h3 className='text-cente text-[32px] font-semibold'>{gameOver}</h3>
-        <button className='font-sans text-[24px] border border-black rounded-lg w-1/4' onClick={() => {setRestart(!restart)}}>Restart</button>
+    <div className='flex flex-col bg xl:h-[100vh]'>
+      <h1 className='text-center font-sans font-semibold text-[40px]'>Choose a pair</h1>
+      <h3 className='font-sans font-semibold text-center text-[32px]'>Round: {round}</h3>
+      <div className='flex xl:flex-row flex-col justify-between ml-[6vw] mr-[6vw]'>  
+        <h3 className='font-sans text-center xl:text-left font-semibold text-[32px]'>Amount of moves: {moves}</h3>
+        <h3 className='text-center text-[32px] font-semibold'>{gameOver}</h3>
+        <button className='font-sans text-[24px] border border-black rounded-lg w-full xl:w-1/4' onClick={() => {setRestart(!restart); setRound(round+1);}}>Restart</button>
       </div>
       <div className='flex flex-wrap justify-center'>
         {tiles.map((tile) => <div key={tile.id} onClick={clickPanel} className='w-1/5 h-[100px] m-5'><Tile color={tile.color} clrId={tile.clrId} openPanels={openPanels}/></div>)}
