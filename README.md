@@ -12,4 +12,4 @@ https://alikinhodkon.github.io/project_2/
 Сборка:
 - React
 - Vite
-- TailWind CSS
+- Tailwind CSS
